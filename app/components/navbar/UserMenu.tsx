@@ -6,6 +6,9 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 //components
 import {Avatar, MenuItem} from "../";
+//modals
+import useLoginModal from "@/app/hooks/useLoginModal";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 type UserMenuProps = {
     
@@ -14,6 +17,9 @@ type UserMenuProps = {
 const UserMenu:React.FC<UserMenuProps> = () => {
 
     const router = useRouter();
+
+    const loginModal = useLoginModal();
+    const registerModal = useRegisterModal();
 
     const currentUser = {
         image: '',
@@ -88,7 +94,7 @@ const UserMenu:React.FC<UserMenuProps> = () => {
                     "
                 >
                     <div className="flex flex-col cursor-pointer">
-                        {currentUser ? (
+                        {!currentUser ? (
                         <>
                             <MenuItem 
                                 label="My trips" 
@@ -120,11 +126,11 @@ const UserMenu:React.FC<UserMenuProps> = () => {
                         <>
                             <MenuItem 
                                 label="Login" 
-                                onClick={() => {}}
+                                onClick={loginModal.onOpen}
                             />
                             <MenuItem 
                                 label="Sign up" 
-                                onClick={() => {}}
+                                onClick={registerModal.onOpen}
                             />
                         </>
                         )}
