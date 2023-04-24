@@ -67,7 +67,7 @@ const Search:React.FC<SearchProps> = () => {
             gap-3
           "
         >
-          <div className="hidden sm:block">another label</div>
+          <div className="hidden sm:block">add guests</div>
 
           <div 
             className="
