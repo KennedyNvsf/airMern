@@ -2,7 +2,8 @@
 
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-//import { signOut } from "next-auth/react";
+import { SafeUser } from "@/app/types";
+import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 //components
 import {Avatar, MenuItem} from "../";
@@ -11,19 +12,17 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 type UserMenuProps = {
-    
+    currentUser?: SafeUser | null
 };
 
-const UserMenu:React.FC<UserMenuProps> = () => {
+const UserMenu:React.FC<UserMenuProps> = ({currentUser}) => {
 
     const router = useRouter();
 
     const loginModal = useLoginModal();
     const registerModal = useRegisterModal();
 
-    const currentUser = {
-        image: '',
-    }
+   
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -94,7 +93,7 @@ const UserMenu:React.FC<UserMenuProps> = () => {
                     "
                 >
                     <div className="flex flex-col cursor-pointer">
-                        {!currentUser ? (
+                        {currentUser ? (
                         <>
                             <MenuItem 
                                 label="My trips" 
@@ -119,7 +118,7 @@ const UserMenu:React.FC<UserMenuProps> = () => {
                             <hr />
                             <MenuItem 
                                 label="Logout" 
-                                onClick={() => {}}
+                                onClick={() => signOut()}
                             />
                         </>
                         ) : (
