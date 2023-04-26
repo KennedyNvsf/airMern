@@ -7,6 +7,7 @@ export {default as UserMenu} from "./navbar/UserMenu";
 export {default as Avatar} from "./Avatar";
 export {default as MenuItem} from "./navbar/MenuItem";
 export {default as Button} from "./Button";
+export {default as Categories} from "./navbar/Categories";
 
 //Modal components
 export {default as Modal} from "./modals/Modal";

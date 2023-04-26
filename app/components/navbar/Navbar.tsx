@@ -7,7 +7,8 @@ import {
   Container, 
   Logo, 
   Search, 
-  UserMenu 
+  UserMenu,
+  Categories
 } from '../';
 
 type NavbarProps = {
@@ -37,6 +38,10 @@ const Navbar:React.FC<NavbarProps> = ({currentUser}) => {
           </div>
         </Container>
       </div>
+
+      {/* categories */}
+      <Categories/>
+
     </div>
   )
 }
