@@ -13,6 +13,7 @@ export {default as Categories} from "./navbar/Categories";
 export {default as Modal} from "./modals/Modal";
 export {default as RegisterModal} from "./modals/RegisterModal";
 export {default as LoginModal} from "./modals/LoginModal";
+export {default as RentModal} from "./modals/RentModal";
 
 //Guarding against hyration erros
 export {default as ClientOnly} from "./ClientOnly";
