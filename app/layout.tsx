@@ -7,7 +7,8 @@ import {
   Navbar,
   RegisterModal,
   LoginModal,
-  RentModal
+  RentModal,
+  SearchModal
 } from "./components";
 //actions
 import getCurrentUser from "./actions/getCurrentUser";
@@ -37,6 +38,7 @@ export default async function RootLayout({
           <LoginModal/>
           <RentModal/>
           <RegisterModal/>
+          <SearchModal/>
           <Navbar currentUser={currentUser}/>
         </ClientOnly>
         <div className="pb-20 pt-28">

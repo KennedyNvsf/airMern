@@ -16,6 +16,7 @@ export {default as Modal} from "./modals/Modal";
 export {default as RegisterModal} from "./modals/RegisterModal";
 export {default as LoginModal} from "./modals/LoginModal";
 export {default as RentModal} from "./modals/RentModal";
+export {default as SearchModal} from "./modals/SearchModal";
 
 //Guarding against hyration erros
 export {default as ClientOnly} from "./ClientOnly";
